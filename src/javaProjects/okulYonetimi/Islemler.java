@@ -108,11 +108,11 @@ public class Islemler {
                 islemMenusu();
                 break;
             case 3:
-                //   listeleme();
+               listeleme();
                 islemMenusu();
                 break;
             case 4:
-                //  silme();
+               silme();
                 islemMenusu();
                 break;
             default:
@@ -124,7 +124,16 @@ public class Islemler {
         }
     }
 
-    private static void arama() {
+    private static void silme() {
+		
+	}
+
+	private static void listeleme() {
+		
+		
+	}
+
+	private static void arama() {
     	System.out.println("**** "+kisiTuru+" Arama Sayfasi *****");
     	boolean kontrol=true;
     	
@@ -185,7 +194,7 @@ public class Islemler {
     		System.out.println("Sınıfı  Giriniz : ");
     		String sinif =scan.next();
     		
-    		Ogrenci ogrenci =new Ogrenci(adSoyad,kimlikNo,yas,sinif,numara);
+    		Ogrenci ogrenci =new Ogrenci(adSoyad,kimlikNo,yas,numara,sinif);
     		
     		ogrenciList.add(ogrenci);
     		System.out.println(ogrenci.toString()+ "eklendi");
