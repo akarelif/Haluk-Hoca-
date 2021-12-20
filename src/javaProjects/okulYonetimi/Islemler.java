@@ -1,39 +1,39 @@
 package javaProjects.okulYonetimi;
 
 /*
-	BÄ°R OKUL YONETÄ°M PLATFORMU KODALYINIZ.
+	BÝR OKUL YÖNETÝM PLATFORMU KODALYINIZ.
 
-	1.	Bu programda, ogrenci ve ogretmen KayÄ±tlarÄ± ile ilgili islemler yapÄ±labilmelidir.
-		KayÄ±tlarda su bilgiler olabilmelidir.
+	1.	Bu programda, ögrenci ve ögretmen Kayýtlarý ile ilgili islemler yapýlabilmelidir.
+		Kaýtlarda su bilgiler olabilmelidir.
 
-		Ogretmen: Ad-Soyad,  kimlik No, yas, bolum, ve sicil No bilgileri icermelidir.
-		Ogrenci: Ad-Soyad,  kimlik No, yas, numara, sÄ±nÄ±f bilgileri icermelidir.
+		Ögretmen: Ad-Soyad,  kimlik No, yas, bölüm, ve sicil No bilgileri icermelidir.
+		Ögrenci: Ad-Soyad,  kimlik No, yas, numara, sýnýf bilgileri icermelidir.
 
-	2.	Program basladÄ±gÄ±nda KullanÄ±cÄ±ya, ogretmen ve ogrenci islemlerini secebilmesi icin
-		AsagÄ±daki gibi bir menu gosterilsin.
+	2.	Program basladýgýnda Kullanýcýya, ögretmen ve ögrenci islemlerini secebilmesi icin
+		Asagýdaki gibi bir menu gosterilsin.
 
 	====================================
-	OGRENCI VE OGRETMEN YONETIM PANELI
+	ÖÐRENCÝ VE ÖÐRETMEN YÖNETÝM PANELÝ
 	====================================
-	 1-OGRENCI ISLEMLERI
-	 2-OGRETMEN ISLEMLERI
-	 Q- CIKIS
+	 1- ÖÐRERENCÝ ÝÞLEMLERÝ
+	 2- ÖÐRETMEN ÝÞLEMLERÝ
+	 Q- ÇIKIÞ
 
-	3.	Secilen Kisi turune gore aasagÄ±daki islemleri gosteren bir alt menu daha gosterilsin.
+	3.	Secilen Kisi turune göre asagýdaki islemleri gösteren bir alt menü daha gösterilsin.
 
-	============= ISLEMLER =============
+	============= ÝÞLEMLER =============
 		 1-EKLEME
 		 2-ARAMA
-		 3-LISTELEME
-		 4-SILME
-		 5-ANA MENU
-		 Q-CIKIS
+		 3-LÝSTELEME
+		 4-SÝLME
+		 5-ANA MENÜ
+		 Q-ÇIKIÞ
 
-	SECIMINIZ:
+	SEÇÝNÝZ:
 
-	4.	Islemler menusunde secilen isleme gore bir onceki menude secilen Kisi turu ile ilgili
-	    ekleme, kimlik no ile silme ve arama, var olan tum kisileri listeleme gibi islemler yapÄ±labilmelidir.
-		Bunun yanÄ±nda bir ust menuye donme veya cÄ±kÄ±s islemleri de yapÄ±labilmelidir.
+	4.	Ýþlemler menüsünde secilen isleme göre bir önceki menüde secilen Kisi türü ile ilgili
+	    ekleme, kimlik no ile silme ve arama, var olan tüm kiþileri listeleme gibi islemler yapýlabilmelidir.
+		Bunun yanýnda bir üst menüye dönme veya cýkýþ iþlemleri de yapýlabilmelidir.
 
  */
 
@@ -57,11 +57,10 @@ public class Islemler {
 
         String secim = scan.next().toUpperCase();
 
-
         switch (secim) {
 
             case "1":
-                kisiTuru = "OGRENCI";
+                kisiTuru = "OGRENCÄ°";
                 islemMenusu();
                 break;
             case "2":
@@ -69,31 +68,29 @@ public class Islemler {
                 islemMenusu();
                 break;
             case "Q":
-                cÄ±kÄ±s();
+                cýkýs();
                 break;
             default:
                 System.out.println("hatali giris yaptiniz !!!");
                 anaMenu();
                 break;
-
         }
-
     }
 
-    private static void cÄ±kÄ±s() {
-        System.out.println("uygulamayi kullandiginiz icin thanks bro  :)");
+    private static void cýkýs() {
+        System.out.println("uygulamayi kullandiginiz iÃ§in thanks bro  :)");
     }
 
     private static void islemMenusu() {
-        System.out.println("3. Secilen Kisi turune gore asagÄ±daki islemleri gosteren bir alt menu daha gosterilsin.\r\n"
-                + "============= ISLEMLER =============\r\n"
+        System.out.println("Sectiginiz  KiÅŸi turu icin  aÅŸaÄŸÄ±daki iÅŸlemlerden tercih yapÄ±nÄ±z.\r\n"
+                + "============= ÝÞLEMLER =============\r\n"
                 + "     1-EKLEME\r\n"
                 + "     2-ARAMA\r\n"
-                + "     3-LISTELEME\r\n"
-                + "     4-SILME\r\n"
-                + "     0-CIKIS");
+                + "     3-LÝSTELEME\r\n"
+                + "     4-SÝLME\r\n"
+                + "     0-ANA MENU");
 
-        System.out.println("Ä°slem Tercihinizi Giriniz : ");
+        System.out.print("islem tercihinizi giriniz : ");
         int islemTercihi = scan.nextInt();
         switch (islemTercihi) {
             case 0:
@@ -108,110 +105,134 @@ public class Islemler {
                 islemMenusu();
                 break;
             case 3:
-               listeleme();
+                listeleme();
                 islemMenusu();
                 break;
             case 4:
-               silme();
+                silme();
                 islemMenusu();
                 break;
             default:
-                System.out.println("Hatali Giris Yaptiniz :( ");
+                System.out.println("hatali giris yaptiniz :( ");
                 islemMenusu();
                 break;
+        }
+    }
 
-
+    private static void listeleme() {
+        System.out.println("******   " + kisiTuru + " listeleme sayfasÄ±  ******");
+        if (kisiTuru.equalsIgnoreCase("ogrenci")) {
+            for (Kisi k : ogrenciList) {
+                System.out.println(k.toString());
+            }
+        } else {
+            for (Kisi k : ogretmenList) {
+                System.out.println(k.toString());
+            }
         }
     }
 
     private static void silme() {
-		
-	}
 
-	private static void listeleme() {
-		
-		
-	}
+        System.out.println("*****   " + kisiTuru + " silme sayfasi   *****");
+        boolean kontrol = true;
 
-	private static void arama() {
-    	System.out.println("**** "+kisiTuru+" Arama Sayfasi *****");
-    	boolean kontrol=true;
-    	
-    	if (kisiTuru.equalsIgnoreCase("OGRENCI")) {
-			System.out.println("AradÄ±gÄ±nÄ±z Ogrenci Kimlik No Giriniz : ");
-			
-			String araOgrcKimlik =scan.nextLine();
-			scan.next();
-			for (Kisi k : ogrenciList) {
-				if (k.getKimlikNo().contains(araOgrcKimlik)) {
-					
-					System.out.println("Aradiginiz Ogrenci : " + k.getAdSoyad());
-					kontrol=false;
-					
-				}if (kontrol==true) {
-					System.out.println("Aradiginiz Ogrenci Mevcut Degil");
-				} else {
-					
-						System.out.println("AradÄ±gÄ±nÄ±z Ogretmen Kimlik No Giriniz : ");
-						
-						String araOgrtKimlik =scan.nextLine();
-						scan.next();
-						for (Kisi k1 : ogretmenList) {
-							if (k1.getKimlikNo().contains(araOgrtKimlik)) {
-								
-								System.out.println("Aradiginiz Ogretmen : " + k1.getAdSoyad());
-								kontrol=false;
-								
-							}if (kontrol==true) {
-								System.out.println("Aradiginiz Ogtermen Mevcut Degil");
-		    	
-							}
-						}
-					}
-				}
-			}
-    	}
-						
-    	
-	
-
-	private static void ekleme() {
-
-    	System.out.println("***** "+kisiTuru+" Ekleme Sayfasi *****");
-    	System.out.println("Ad Soyad Giriniz : ");
-    	scan.nextLine();
-    	
-    	String adSoyad =scan.nextLine();
-    	System.out.println("Kimlik No Giriniz : ");
-    	String kimlikNo =scan.next();
-    	System.out.println("Yas Giriniz : ");
-    	
-    	int yas =scan.nextInt();
-    	
-    	if (kisiTuru.equals("OGRENCÄ°")) {
-    		System.out.println("Ogrenci No Giriniz : ");
-    		String numara =scan.next();
-    		System.out.println("SÄ±nÄ±fÄ±  Giriniz : ");
-    		String sinif =scan.next();
-    		
-    		Ogrenci ogrenci =new Ogrenci(adSoyad,kimlikNo,yas,numara,sinif);
-    		
-    		ogrenciList.add(ogrenci);
-    		System.out.println(ogrenci.toString()+ "eklendi");
-    		
-		} else {
-			System.out.println("Sicil No Giriniz : ");
-			String sicilNo =scan.next();
-			System.out.println("Bolum Giriniz : ");
-			String bolum =scan.next();
-			
-			Ogretmen ogrt =new Ogretmen(adSoyad,kimlikNo,yas,sicilNo,bolum);
-			ogretmenList.add(ogrt);	
-			System.out.println(ogrt.toString()+ "eklendi");
-		}
-    	
-    
+        if (kisiTuru.equalsIgnoreCase("OGRENCI")) {
+            System.out.println("silinecek ogrc kimlik No giriniz :");
+            scan.next();
+            String silOgrcKimlk = scan.nextLine();
+            for (Kisi k : ogrenciList) {
+                if (k.getKimlikNo().contains(silOgrcKimlk)) {
+                    System.out.println("sildiginiz  ogrenci : " + k.getAdSoyad());
+                    ogrenciList.remove(k);
+                    kontrol = false;
+                    break;
+                }
+            }
+            if (kontrol) {
+                System.out.println("Aradýgýnýz ögrenci mevcut degil");
+            }
+        } else {
+            System.out.print("silinecek ogrt kimlik No giriniz :");
+            scan.next();
+            String silOgrtKimlk = scan.nextLine();
+            for (Kisi k : ogretmenList) {
+                if (k.getKimlikNo().contains(silOgrtKimlk)) {
+                    System.out.println("sildiginiz ogretmen : " + k.getAdSoyad());
+                    ogretmenList.remove(k);
+                    kontrol = false;
+                    break;
+                }
+            }
+            if (kontrol) {
+                System.out.println("Aradýgýnýz ogretmen mevcut degil");
+            }
+        }
     }
 
+    private static void arama() {
+        System.out.println("*****   " + kisiTuru + " arama sayfasi   *****");
+        boolean kontrol = true;
 
+        if (kisiTuru.equalsIgnoreCase("OGRENCI")) {
+            System.out.print("aradiginiz ogrc kimlik No giriniz :");
+
+            String araOgrcKimlk = scan.next();
+             scan.next();
+            for (Kisi k : ogrenciList) {
+                if (k.getKimlikNo().equals(araOgrcKimlk)) {
+                    System.out.println("aradiginiz ogrenci : " + k.getAdSoyad());
+                    kontrol = false;
+                }
+            }
+            if (kontrol) {
+                System.out.println("Aradýgýnýz ögrenci mevcut degil");
+            }
+        } else {
+            System.out.print("aradiginiz ogrt kimlik No giriniz :");
+            String araOgrtKimlk = scan.nextLine();
+            scan.next();
+            for (Kisi k : ogretmenList) {
+                if (k.getKimlikNo().contains(araOgrtKimlk)) {
+                    System.out.println("aradiginiz ogretmen : " + k.getAdSoyad());
+                    kontrol = false;
+                }
+            }
+            if (kontrol) {
+                System.out.println("Aradýgýnýz ogretmen mevcut degil");
+            }
+        }
+    }
+
+    private static void ekleme() {
+
+        System.out.println("*****   " + kisiTuru + " ekleme sayfasi   *****");
+        System.out.print("Ad Soyad giriniz : ");
+        scan.nextLine();
+        String adSoyad = scan.nextLine();
+        System.out.print("Kimlik No giriniz : ");
+        String kimlikNo = scan.next();
+        System.out.print("Yas giriniz : ");
+        int yas = scan.nextInt();
+        if (kisiTuru.equals("OGRENCÄ°")) {
+            System.out.println("ogrenci NO giriniz : ");
+            String numara = scan.next();
+            System.out.println("Sinifi giriniz :");
+            String sinif = scan.next();
+
+            Ogrenci ogrenci = new Ogrenci(adSoyad, kimlikNo, yas, numara, sinif);
+            ogrenciList.add(ogrenci);
+            System.out.println(ogrenci.toString() + " eklendi");
+
+        } else {
+            System.out.println("sicil no giriniz : ");
+            String sicilNo = scan.next();
+            System.out.println("Bolum giriniz : ");
+            String bolum = scan.next();
+            Ogretmen ogrt = new Ogretmen(adSoyad, kimlikNo, yas, sicilNo, bolum);
+            ogretmenList.add(ogrt);
+            System.out.println(ogrt.toString() + " eklendi");
+        }
+    }
 }
+
